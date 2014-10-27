@@ -1,0 +1,34 @@
+{% layout "bistro" %}
+{% block title %}Bistro 4{% endblock %}
+{% block content %}
+	 <header class="hero-container panel">
+            <a href="#" class="logo">
+                <h1>Bistro 4</h1>
+                <h2>eetcafé</h2>
+            </a>
+
+            <!-- MAIN NAV --> 
+            {% include "bistro-nav" %}
+            
+            <!-- OPENINGSUREN, ADRES, TELEFOONNUMMER -->
+<!--            {% include "openinghours" %}-->
+            
+            <!-- DAGMENU -->
+            {% include "dayplate" %}
+
+            
+        </header>
+
+        <section itemprop="menu" class="la-carte">
+            <!-- BREAKFAST -->
+            {% include "breakfast" %}
+            
+            <!-- LUNCH -->
+            {% include "lunch" %}
+            
+            <!-- DINNER -->
+            {% include "dinner" %}
+        </section>
+
+        {% include "events" %}
+{% endblock %}

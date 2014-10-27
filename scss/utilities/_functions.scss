@@ -1,0 +1,37 @@
+// Import if Google Fonts URL is defined
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// Calculate em values
+
+@function em($target, $context: $base__font-size) {
+	@return ($target / $context) * 1em;
+}
+
+// Call the color palette modifiers
+
+@function palette($palette, $shade: 'base') {
+    @return map-get(map-get($color-palettes, $palette), $shade);
+}
+
+// Get image from relative path map
+
+@function get-img($key, $img) {
+    @return url('#{map-get($path--rel, $key)}/#{$img}');
+}
+
+// Set the "context" width for the grid
+
+@function g-context($g-col-width, $g-col-count ,$g-gutter-width) {
+    $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+    @return $g-context;
+}
+
+// Set "context" width for gallery
+
+@function gal-context($gal-col-width, $g-col-count) {
+    $gal-context: $gal-col-width * $g-col-count;
+    @return $gal-context;
+}

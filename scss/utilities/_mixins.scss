@@ -1,0 +1,210 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// Media Queries
+
+@mixin mq($break) {
+    @if $break == "small" {
+        @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break == "medium" {
+        @media (min-width: $brkpoint-md + 1) {
+            @content;
+        }
+    }
+    @else if $break == "large" {
+        @media (min-width: $brkpoint-lg) {
+            @content;
+        }
+    }
+     @else if $break == "landscape" {
+        @media (orientation: landscape) and (max-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break == "portait" {
+        @media (orientation: portrait) and (min-width: $brkpoint-md +1) {
+            @content;
+        }
+    }
+    @else {
+        @error "No values could be retrieved for '#{$break}'. Please use either 'small', 'landscape', 'medium' or 'large' as arguments."
+    }
+}
+
+// Generate Modifier Color Classes
+
+@mixin br-colors($map) {
+    @each $theme, $color in $ui-colors {
+        &--#{$theme} {
+            border-color: $color;
+        }
+    }
+}
+
+@mixin bg-colors($map) {
+    @each $theme, $color in $ui-colors {
+        &--#{$theme} {
+            background-color: $color;
+        }
+    }
+}
+
+// Image Replacement
+
+@mixin img-replace($dir, $img, $w, $h, $pos-x, $pos-y, $bg-size, $disp: block) {
+    background-image: url('#{map-get($path--rel, $dir)}/#{$img}');
+    background-repeat: no-repeat;
+    width: $w;
+    height: $h;
+    background-size: $bg-size;
+    background-position: $pos-x, $pos-y;
+    display: $disp;
+}
+
+// BEM Selectors
+
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+// Generating :before or :after pseudo-element shapes
+
+@mixin p-el (
+    $el,
+    $el-w: null,
+    $el-h: null) {
+        @if $el == "before" or $el == "after" {
+            &:#{$el} {
+                @extend %pseudos;
+                width: $el-w;
+                height: $el-h;
+                @content;
+            }
+        }
+        @else {
+            @error "`#{$el}` is not a valid pseudo-element.";
+	    }
+}
+
+// Adjacent sibling margins
+
+@mixin doubly($margin: 1em) {
+	& + & {
+	  margin-left: $margin;
+    @content;
+	}
+}
+
+// Grid Columns
+     
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;  
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    
+    // Generate column modifier classes
+    &--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+} 
+
+// Gallery columns 
+// ===============================================================================
+// 1a. Calculate column widths
+// 1b. Generate column modifier classes
+// 2a. Calculate gallery item heights
+// 2b. Generate gallery item modifier classes
+
+
+@mixin gal-columns {
+    
+    @for $i from 1 through $g-col-count {
+        $gal-context: gal-context($gal-col-width, $g-col-count);
+        $gal-target: $gal-col-width * $i;
+
+        // Generate "gallery" column modifier classes  
+    
+            @include mq(small) {
+                &--#{$i + "--sm"} {
+                    width: percentage($gal-target / $gal-context);
+                }
+            }
+            
+            @include mq(landscape) {
+                &--#{$i + "--md"} {
+                    width: percentage($gal-target / $gal-context);
+                }
+            }
+        
+            @include mq(large) {
+                &--#{$i + "--lg"} {
+                    width: percentage($gal-target / $gal-context);
+                }
+            }
+    }
+}
+
+@mixin gal-item-heights {
+    
+    @for $i from 1 through $g-col-count {
+        $gal-context: gal-context($gal-col-width, $g-col-count);
+        $gal-target: $gal-col-width * $i * 100vw;
+
+        // Generate "gallery" column modifier classes  
+           
+            @include mq(small) {
+                &--#{$i + "--sm"} {
+                    height: $gal-target / $gal-context;
+                }
+            }
+            
+            @include mq(landscape) {
+                &--#{$i + "--md"} {
+                    height: $gal-target / $gal-context;
+                }
+            }
+            
+            @include mq(large) {
+                &--#{$i + "--lg"} {
+                    height: $gal-target / $gal-context;
+                }
+            }
+            
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

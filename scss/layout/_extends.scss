@@ -1,0 +1,51 @@
+// ==========================================================================
+// Placeholder selectors
+// ==========================================================================
+
+// Hero Containers
+
+%hero {
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+// Panels
+
+%panel-default {
+    padding: em(24px);
+    margin: auto;
+    
+//    @include mq(medium) {
+//        padding-bottom: em(20px);
+//    }
+//    
+//    @include mq(large) {
+//        max-width: $brkpoint-lg;
+//    }
+}
+
+%panel-padding {
+    padding-top: em(34px);
+    
+    @include mq(medium) {
+        padding-top: em(72px);
+        padding-bottom: em(16px);
+    }
+}
+
+%panel-overlay {
+    background-color: fade_out($color-primary, .3);
+//    mix-blend-mode: multiply;
+    padding: em(24px);
+    color: $white;
+    
+        h1,
+        h2,
+        p,
+        blockquote {
+            color: $white;
+        }
+}

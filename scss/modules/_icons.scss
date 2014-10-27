@@ -1,0 +1,55 @@
+// ==========================================================================
+// Icons
+// ==========================================================================
+
+.logo {
+    position: absolute;
+    display: block;
+    width: span(2);
+    height: span(2);
+    margin: auto;
+    top: 0; right: 0; bottom: em(250px); left: 0;
+    text-align: center;
+    
+    @include mq(small) {
+        width: span(6);
+    }
+    
+    h1 {
+        margin: 0;
+        font-family: $font-family--secondary;
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        @extend %hdln-logo;
+        border-bottom: 1px solid $color-secondary;
+    }
+    
+    h2 {
+        margin: 0;
+        font-family: $font-family--primary;
+        font-weight: $font-weight--light;
+        @extend %hdln-logo;
+    }
+}
+
+// Filter Icon
+
+.icn {
+
+    @include m(toggle) {
+        line-height: 0;
+        cursor: pointer;
+        width: 25px;
+        height: 17px;
+        border-top: solid 3px palette(grey, light);
+        border-bottom: solid 3px palette(grey, light);
+        position: relative;
+        margin: auto;
+        
+        @include p-el(before, 25px, 3px) {
+            background: palette(grey, light);
+            top: 4px;
+        }
+    }
+    
+}

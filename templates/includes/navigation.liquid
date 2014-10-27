@@ -1,0 +1,7 @@
+<nav class="navbar">
+    <ul class="nav">
+        <li {% if mixture.url == "index" %}class="current nav__item"{% endif %}><a href="/">Bistro 4</a></li>
+        <li {% if mixture.url == "example" %}class="nav__item current"{% endif %}><a href="/example">Example</a></li>
+        <li {% if mixture.url == "model" %}class="nav__item current nav__item"{% endif %}><a href="/model">Model</a></li>
+    </ul>
+</nav>

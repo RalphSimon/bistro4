@@ -1,0 +1,102 @@
+.menu {
+    text-transform: uppercase;
+    font-weight: $font-weight--bold;
+    color: palette(grey, dark);
+    display: block;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    
+//    @include m(filter) {
+//        @extend .menu;
+//        color: palette(grey, light);
+//    }
+}
+
+// Main nav
+.nav {
+    padding-top: em(10px);
+    width: 100%;
+    text-align: center;
+    
+    @include mq(small) {
+        background: fade_out($color-primary, .5);
+//        mix-blend-mode: multiply;
+    }
+    
+    @include e(item) {
+        
+        @include mq(medium) {
+            display: inline-block;
+            margin: 0 em(12px);
+            
+            a {
+                padding: em(10px);
+            }
+        }
+        
+        a {
+            @extend %nav-item-link;
+            color: $true-white;
+            border-bottom: 1px solid $white;
+            &:hover {
+                @extend %nav-item-on;
+            }
+            
+            @include mq(small) {
+                
+                
+                &:hover {
+                    border-color: $color-accent;
+                }
+            }
+            
+        }
+        
+        @include m(current) {
+            @include mq(medium) {
+                display: inline-block;
+                
+                a {
+                    padding: em(10px);
+                }
+            }
+            
+            a {
+                @extend %nav-item-link;
+                @extend %nav-item-on;
+            }
+            
+            a:link,
+            a:visited,
+            a:active {
+                color: palette(grey, dark);
+            }
+        }
+        @include m(filter) {
+            @include mq(medium) {
+                display: inline-block;
+                margin: 0 em(12px);
+                
+                a {
+                    padding: em(5px) em(20px);
+                }
+            }
+            
+            a {
+                @extend %nav-item-link;
+                @extend %nav-item-filter;
+                margin-bottom: em(12px);
+                &:hover {
+                    @extend %nav-item-filter-on;
+                }
+            }
+        }
+    }
+}
+
+
+        
+
+
+    

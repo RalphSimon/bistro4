@@ -1,0 +1,42 @@
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+.form {
+    margin-top: em(54px);
+    @include e(label) {
+        display: block;
+        margin-bottom: em(10px);
+        
+        @include m(hidden) {
+			@extend .srt;
+		}
+    }
+    
+    @include e(input) {
+        width: 100%;
+        border: 0;
+        font-size: em(18px);
+        padding: em(16px, 18px);
+        margin-bottom: em(27px, 18px);
+        background: palette(grey, x-light);
+        color: palette(black);
+        font-weight: $font-weight--light;
+        
+        &:focus {
+            outline: 0;
+            border: 1p solid $color-primary;
+            background: $white;
+        }
+    }
+    
+    @include e(btn) {
+        @extend %btn;
+        background: $color-accent;
+    }
+    
+    @include mq(medium) {
+        max-width: em(400px);
+        margin: auto;
+    }
+}

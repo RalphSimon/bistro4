@@ -1,0 +1,75 @@
+// ==========================================================================
+// Base Styles - only element selectors
+// ==========================================================================
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+    color: palette(grey);
+    font-size: $base__font-size;
+    font-family: $font-family--primary;
+    font-weight: $font-weight--light;
+    line-height: ($base__line/$base__font-size);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+h1 {
+    @extend %hdln-prim;
+}
+
+h2 {
+    @extend %hdln-sec;
+}
+
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: palette(grey, dark);
+    text-decoration: none;
+    font-weight: $font-weight--bold;
+}
+
+p, address {
+	margin: 0 0 em(24px, 18px) 0;
+	font-weight: $font-weight--light;
+	font-size: em(16px);
+	line-height: (24px/18px);
+}
+    
+blockquote {
+    font-size: em(24px);
+    font-weight: $font-weight--light;
+    font-style: italic;
+    font-family: $font-family--secondary;
+    margin: em(36px, 24px);
+    padding: 0 0 0 5%;
+    border-left: em(8px, 24px) solid $color-accent;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    padding-top: 0;
+}
+
+
+
+
+
+   

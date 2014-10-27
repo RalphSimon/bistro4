@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Bistro 4{% endblock %}</title>
+        {{ "style.css" | asset_url | stylesheet_tag }}
+        <!-- TODO: Style this project :) -->
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}
+                
+            {% endblock %}
+        </div>
+        {% include "footer" %}
+    </body>
+</html>

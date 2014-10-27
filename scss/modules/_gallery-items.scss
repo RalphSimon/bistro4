@@ -1,0 +1,194 @@
+// ==========================================================================
+// Gallery Items
+// ==========================================================================
+
+// Calculate "Gallery" columns
+
+.gal__item-w {
+    @include gal-columns;
+}
+
+.gal__item-h {
+    @include gal-item-heights;
+}
+
+	/* Gallery Items: figure
+	================================ */
+
+	.gallery-container figure {
+		@include span(6);
+        height: $item--small;
+        @include gutters(0);
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 40%;
+            left: 0;
+            margin: auto;
+            z-index: -50;
+            opacity: 1;
+            -webkit-transform: scale(1.15);
+            transform: scale(1.25);
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s, transform 0.5s;
+        }
+        
+        &:hover img {
+            transform: scale(1.15);
+        }
+
+	}
+	
+
+// Positioning of Individual Images in gal__item
+
+.gallery-container figure:nth-child(12n+1) {
+	img {
+		width: 145%;
+		bottom: -2%;
+		left: -15%;
+	}
+}
+.gallery-container figure:nth-child(12n+2) {
+	img {
+    	bottom: -5%;
+	    left: -55%;
+	    width: 180%;
+	}
+}
+.gallery-container figure:nth-child(12n+3) {
+	img {
+	    bottom: -5%;
+	    width: 190%;
+	    left: -30%;
+	}
+}
+.gallery-container figure:nth-child(12n+4) { 
+	img {
+	    width: 320%;
+	    bottom: -10%;
+	    left: -170%;    
+	}
+}
+.gallery-container figure:nth-child(12n+5) {
+	img {
+	    width: 160%;
+	    bottom: -0%;
+	    left: -30%;
+	}
+}
+.gallery-container figure:nth-child(12n+6) {
+	img {
+	    width: 165%;
+	    bottom: -2%;
+	    left: -25%;
+	}   
+}
+.gallery-container figure:nth-child(12n+7) {
+	img {
+	    width: 175%;
+	    bottom: -0%;
+	    left: -35%;
+	} 
+}
+.gallery-container figure:nth-child(12n+8) {
+	img {
+	    width: 165%;
+	    left: -15%;
+	    bottom: 2%;
+	}	
+}
+.gallery-container figure:nth-child(12n+9) {
+	img {
+	    width: 165%;
+	    bottom: -30%;
+	    left: -35%;
+	}
+}
+.gallery-container figure:nth-child(12n+10) {
+	img {
+	    width: 150%;
+	    top: 5%;
+	    bottom: 5%;
+	    left: -70%;
+	}
+}
+.gallery-container figure:nth-child(12n+11) { 
+	img {
+	    width: 170%;
+	    bottom: 0;
+	    left: -30%;
+	}
+}
+.gallery-container figure:nth-child(12n+12) {
+	img {
+	    width: 180%;
+	    bottom: 0;
+	    left: -50%;
+	}
+}
+
+// Media Queries
+//====================================================
+// SMALL
+
+@include mq(small) {
+    .gallery-container figure:nth-child(12n+4) {
+        height: $item--small * 2;
+        float: right;
+    }
+    .gallery-container figure:nth-child(12n+6),
+    .gallery-container figure:nth-child(12n+9) {
+        @include span(12);
+        height: $item--small * 1.5;  
+    }
+    .gallery-container figure:nth-child(12n+10) {
+        height: $item--small * 2;
+    }
+}
+
+// LANDSCAPE / Mobile
+@include mq(landscape) {
+        .gallery-container figure,
+        .gallery-container figure:nth-child(12n+4),
+        .gallery-container figure:nth-child(12n+6),
+        .gallery-container figure:nth-child(12n+9),
+        .gallery-container figure:nth-child(12n+10) {
+            @include span(6);
+            height: $item--landscape;
+        }
+}
+
+// MEDIUM / Tablet & Phablet
+@include mq(medium) {
+    .gallery-container figure {
+        @include span(4);
+        height: $item--medium;
+    }
+    .gallery-container figure:nth-child(12n+1) {
+        @include span(8);
+        height: $item--medium * 2;
+    }
+    .gallery-container figure:nth-child(12n+4) {
+        height: $item--medium * 2;
+    }
+    .gallery-container figure:nth-child(12n+9),
+    .gallery-container figure:nth-child(12n+10){
+        @include span(6);
+    }
+    .gallery-container figure:nth-child(12n+9),
+    .gallery-container figure:nth-child(12n+10),
+    .gallery-container figure:nth-child(12n+11),
+    .gallery-container figure:nth-child(12n+12) {
+        height: $item--medium * 1.25;
+    }
+    .gallery-container figure:nth-child(12n+12) {
+        @include span(8);
+    }
+}
+

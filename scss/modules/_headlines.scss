@@ -1,0 +1,37 @@
+// ==========================================================================
+// Headlines
+// ==========================================================================
+
+.headline {
+    
+    &--primary {
+        @extend %hdln-prim;
+        margin-bottom: em(54px, 36px);
+        
+        @include m(section) {
+            @extend %hdln-prim;
+            @extend %hdln-section;
+            margin-top: em(72px, 36px);
+        }
+        
+        @include m(grouped) {
+            @extend %hdln-prim;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    
+    &--secondary {
+        @extend %hdln-sec;
+        margin-top: em(44px, 24px);
+        margin-bottom: em(16px, 24px);
+        
+        
+        @include m(grouped) {
+            @extend %hdln-sec;
+            margin-top: 0;
+            margin-bottom: em(44px, 24px);
+        }
+    }
+    
+}

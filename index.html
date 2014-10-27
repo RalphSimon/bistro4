@@ -1,0 +1,489 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bistro 2</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/modernizr/modernizr.js"></script>
+    </head>
+    <body itemscope itemtype ="http://schema.org/FoodEstablishment">
+        
+        <header class="hero-container">
+            <a href="#">
+                <h1>Bistro 2</h1>
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav">
+                    <li class="nav__item"><a href="#">Dagmenu</a></li>
+                    <li class="nav__item"><a href="#">Suggesties</a></li>
+                    <li class="nav__item"><a href="#">A la carte</a></li>
+                    <li class="nav__item"><a href="#">Feesten &amp; Partijen</a></li>
+                    <li class="nav__item"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- OPENINGSUREN, ADRES, TELEFOONNUMMER -->
+            <section>
+                <h2>Openingsuren</h2>
+                <p>
+                    <time itemprop="openingHours" datetime="Mo-Fr 08:00-00:00">maandag t/m vrijdag: 8.00 ~ 00.00</time><br />
+                    <time itemprop="openingHours" datetime="Sa, Su 09:30-00:00">zaterdag &amp; zondag: 9.30 ~ 00.00</time>
+                </p>
+   
+                <address itemprop="streetAddress">Graaf van Egmontstraat 60 - 2000 Antwerpen</address>
+
+                <p>
+                    <span itemprop="telephone">03 257 76 78</span>
+                    <br />
+                    <em itemprop="acceptsReservations">(Gelieve telefonisch te reserveren)</em>                   
+                </p>
+            </section>
+            
+            <!-- DAGMENU -->
+            <section itemprop="dayPlate">
+                <article>
+                    <h2>Dagsoep</h2>
+                    <p>Wortelsoep</p>
+                </article>
+                
+                <article>
+                    <h2>Dagschotel</h2>
+                    <p>Witlof uit de oven met ham, kaas en aardappelpuree</p>
+                </article>
+            </section>
+            
+        </header>
+        
+        <section itemprop="menu" class="la-carte">
+            <article itemprop="breakfast">
+                <h2>Ontbijt</h2>
+                <p><time datetime="Mo-Fr 8:00-12:00">maandag t/m vrijdag: 8.00 - 12.00</time><br />
+                <time datetime="Sa, Su 9:30-13:00">zaterdag &amp; zondag: 8.00 - 12.00</time></p>
+                
+                <table>
+                    <tr>
+                        <th scope="row">croissant</th>
+                        <td>2,20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">chocolade broodje</th>
+                        <td>2,20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">yoghurt natuur</th>
+                        <td>3,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">yoghurt met vers fruit</th>
+                        <td>6,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">hard- of zachtgekookt eitje met soldaatjes</th>
+                        <td>2,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">'oeuf cocotte' met soldaatjes</th>
+                        <td>3,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">omelet of roerei natuur</th>
+                        <td>4,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">omelet ham, kaas of spek</th>
+                        <td>6,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">omelet ham &amp; kaas</th>
+                        <td>7,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">boerenomelet</th>
+                        <td>9,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">spiegelei (2 eieren)</th>
+                        <td>4,50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">spiegelei met spek</th>
+                        <td>7,00</td>
+                    </tr>
+                </table>
+                
+                <div class="dejeuner">
+                    <h3>Petit dejeuner</h3>
+                    <span>9,50</span>
+                    <p>vers fruitsap, croissant of chocoladebroodje, mandje brood, confituur en choco, koffie of thee</p>
+                </div>
+                
+                <div class="dejeuner">
+                    <h3>Shilling ontbijt</h3>
+                    <span>14,50</span>
+                    <p>vers fruitsap, oeuf cocotte met soldaatjes, ham, kaas, croissant of chocoladebroodje, mandje brood, confituur en choco, koffie of thee</p>
+                </div>
+                
+                <div>
+                    <p>Shilling ontbijt inclusief glas cava <span>18,50</span></p>
+                </div>
+                
+                <!-- is de weergave van supplementen nodig? -->
+                <table>
+                    <caption>supplementen</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">beenham</th>
+                            <td>3,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">kaas</th>
+                            <td>2,20</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">zalm</th>
+                            <td>5,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">brood</th>
+                            <td>1,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">confituur of choco</th>
+                            <td>0,80</td>
+                        </tr>
+                   </tbody> 
+                </table>
+            </article>
+            
+            <article>
+                <h2>Lunch</h2>
+                <p><time datetime="Mo-Su 12:00-18:00">Elke dag: 12.00 - 18.00</time></p>
+                <table>
+                    <caption>club sandwiches</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">club sandwich kip</th>
+                            <td>12,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">club sandwich zalm</th>
+                            <td>13,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>supplement frietjes</span></th>
+                            <td>&#43; 2,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>croque's</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">croque uit 't vuistje</th>
+                            <td>5,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">croque monsieur</th>
+                            <td>7,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">croque madame</th>
+                            <td>8,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>focaccia's</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">focaccia met gegrilde groenten<br />
+                            <span>verse basilicum olie en ruccola</span></th>
+                            <td>12,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">focaccia met crispy bacon<br />
+                            <span>stilton cheese, spinaziesalade, yoghurtdressing</span></th>
+                            <td>12,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">focaccia met gemarineerde rosbief<br />
+                            <span>rode salsadressing, gegrilde paprika en ruccola</span></th>
+                            <td>13,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            
+            <article>
+                <h2>Diner</h2>
+                <p>
+                    <time datetime="Mu-Su 12:00-22:00">Elke dag: 12.00 - 22.00</time>
+                </p>
+                <table>
+                    <caption>voor de kids<br />
+                    <em>tot 12 jaar</em>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">hamburger<br />
+                            <span>met frietjes, appelmoes en sla</span></th>
+                            <td>8,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Curryworst<br />
+                            <span>met frietjes en sla</span>
+                            </th>
+                            <td>7,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kipfilet<br />
+                            <span>frietjes, appelmoes en sla</span></th>
+                            <td>8,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Macaroni<br />
+                            <span>met ham &amp; kaas</span></th>
+                            <td>8,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Lasagna Bolognaise</th>
+                            <td>8,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>Voorgerechten</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">carpaccio<br />
+                            <span>rundsvlees, ruccola, parmezan</span></th>
+                            <td>9,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">vitello tonnato<br />
+                            <span>kalfsvlees, tonijnsaus, appelkappertjes</span>
+                            </th>
+                            <td>14,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scampi persillade of thaise curry<br />
+                            <span>met look en peterselie of thaise curry</span></th>
+                            <td>9,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">huisgemaakte kaaskroketten<br />
+                            <span>met een slaatje en soldaatjes</span></th>
+                            <td>10,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>supplement frietjes</span></th>
+                            <td>&#43; 2,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">huisgemaakte garnaalkroketten<br />
+                            <span>met een slaatje en soldaatjes</span></th>
+                            <td>11,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>supplement frietjes</span></th>
+                            <td>&#43; 2,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">duo van kaas- &amp; garnaalkroketten<br />
+                            <span>met een slaatje en soldaatjes</span></th>
+                            <td>10,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>supplement frietjes</span></th>
+                            <td>&#43; 2,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">zalmtartaar<br />
+                            <span>met avocado &amp; groene appel</span></th>
+                            <td>11,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>Salades</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">caesar salade<br />
+                            <span>kip, ansovisdressing, parmezaan, croutons</span></th>
+                            <td>14,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">veggie salade<br />
+                            <span>met gegrilde groenten</span>
+                            </th>
+                            <td>11,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">salade geitenkaas<br />
+                            <span>met honing, stukjes appel, noten en spek</span></th>
+                            <td>13,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Oosterse salade met kip<br />
+                            <span>In sojasaus gemarineerde kip, gemengde salade, paprika, tomaat, komkommer en mosterd/honingdressing</span></th>
+                            <td>13,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>Hoofdgerechten</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">steak tartaar<br />
+                            <span>met frietjes en een slaatje</span></th>
+                            <td>14,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">shillingburger<br />
+                            <span>rundsburger met sla, tomaat, rode salsadressing en frietjes</span>
+                            </th>
+                            <td>13,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>met kaas</span></th>
+                            <td>&#43; 1,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">steak met frietjes<br />
+                            <span>keuze uit peper- of champignonsaus</span></th>
+                            <td>17,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>met béarnaise</span></th>
+                            <td>&#43; 1,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">stoofvlees<br />
+                            <span>met frietjes en een slaatje</span></th>
+                            <td>15,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">varkenshaasje in een mosterdjasje<br />
+                            <span>met aardappelgratin en een witlofslaatje</span></th>
+                            <td>16,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">vol-au-vent<br />
+                            <span>met frietjes en een slaatje</span></th>
+                            <td>14,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">gegrilde zeebaars<br />
+                            <span>met rozemarijnaardappeltjes, een slaatje en tartaarsaus</span></th>
+                            <td>17,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">zalmtartaar<br />
+                            <span>met avocado en groene appel</span></th>
+                            <td>16,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scampi persillade of thaise cury<br />
+                            <span>met look en peterselie of thaise curry</span></th>
+                            <td>16,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>pasta</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Macaroni<br />
+                            <span>met ham &amp; kaas</span></th>
+                            <td>12,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Lasagna Bolognaise<br />
+                            <span>huisgemaakt</span></th>
+                            <td>13,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tagliatelle met gerookte zalm<br />
+                            <span>met ricotta &amp; spinazie</span></th>
+                            <td>15,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pasta Veggie<br />
+                            <span>met penne en seizoensgroenten</span></th>
+                            <td>11,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table>
+                    <caption>supplementen</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">frietjes</th>
+                            <td>3,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">kroketjes</th>
+                            <td>3,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">rijst</th>
+                            <td>2,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">salade</th>
+                            <td>3,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">mayonaisse of ketchup</th>
+                            <td>0,50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">brood</th>
+                            <td>1,00</td>
+                        </tr>
+                   </tbody> 
+                </table>
+            </article>
+        </section>
+        <!-- end of .la-carte -->
+        
+        <!-- Feesten en partijen -->
+        <section class="events">
+            <div>
+                <h2>Reserveer onze vide!</h2>
+                <p>Wanneer u met een groep een besloten bijeenkomst wilt organiseren, ontvangen wij u met plezier op onze vide. Onze koks en het zaalpersoneel staan voor u klaar om indien u wilt een aangepast menu te serveren in een aangename sfeer.</p>
+                <p>Om te reserveren of voor meer informatie, gelieve ons te contacteren per telefoon of email.</p>
+            </div>
+        </section>
+        
+        <footer>
+            <section class="contact-section">
+                <form class="form">
+                    <label class="form__label--hidden" for="name">Name:</label> 
+                    <input class="form__input" type="text" id="name" placeholder="Name">
+
+                    <label class="form__label--hidden" for="email">Email:</label>
+                    <input class="form__input" type="email" id="email" placeholder="email@website.com">
+
+                    <label class="form__label--hidden" for="msg">Message:</label>
+                    <textarea class="form__input" id="msg" placeholder="Message..." rows="7"></textarea>
+
+                    <input class="btn--default centered" type="submit" value="Submit">
+                </form>
+			</section>
+		</footer>
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

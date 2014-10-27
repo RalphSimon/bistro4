@@ -1,0 +1,18 @@
+{% block content %}
+	<h1>Hello, this is an example!</h1>
+	<p>You are using the Mixture + Compass quick start boilerplate.</p>
+
+	<p><a href="http://compass-style.org/" class="btn">Read the Compass documentation &raquo;</a></p>
+	<p><a href="http://docs.mixture.io" class="btn">Read the Mixture documentation &raquo;</a></p>
+
+    <h2>{{ model.title }}</h2>
+    <p>This example was initiated by:</p>
+    <ol>
+		{% for person in model.people %}
+			<li><a href="http://twitter.com/{{ person.twitter }}">{{ person.name }}</a></li>
+		{% endfor %}
+	</ol>
+
+    <p>Todays date: {{ 'now' | date: "%d %B %Y" }}. <br />
+    Model created: {{ model.modelDate | date: "%d %B %Y" }}</p>
+{% endblock %}

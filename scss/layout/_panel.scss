@@ -1,0 +1,150 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
+
+.hero-container {
+    @extend %hero;
+    z-index: 100;
+    height: 100vh;
+    background-image: get-img(root, 'Tapas-@lg.jpg');
+    background-size: cover;
+    background-color: fade_out($color-primary, .8);
+    background-blend-mode: multiply;
+}
+
+.about-section {
+    @extend %hero;
+    @extend %clearfix;
+    height: auto;
+    
+    @include m(container) {
+        @extend %hero;
+        @extend %clearfix;
+        min-height: 82.5vh;
+        background-image: get-img(slider, 'casper-bw-4.jpg');
+        background-position: 70% center;
+        background-color: fade_out($color-primary, .8);
+        background-blend-mode: multiply;
+    }
+}
+
+
+
+.panel {
+    @extend %panel-default;
+
+    // Generates: .panel--centered
+    @include m(centered) {
+        @extend %panel-default;
+        @extend %center-align;
+    }
+    
+    //Generates: .panel--padded
+    @include m(padded) {
+        @extend %panel-padding;
+        
+        //Generates: .panel--padded--centered
+        @include m(centered) {
+            @extend %center-align;
+            @extend %panel-padding;
+            
+            .about-section & {
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+        }
+    }
+    
+    // Generates: .panel--overlay
+    @include m(overlay) {
+        @extend %panel-overlay;
+        @include span(12);
+//        margin-bottom: em(24px);
+        
+        @include mq(medium) {
+	        & {
+//                @include gutter(em(24px));
+		        @include span(5);
+	        }
+        }
+    }
+    
+    // Generates: .panel--dayplate
+    @include m(dayplate) {
+        position: absolute;
+        width: span(11);
+        right: 0;
+        bottom: em(36px);
+        left: 0;
+        margin: auto;
+        color: $white;
+        @extend %center-align;
+        background: fade_out(palette(black, dark), .2);
+        border: 16px solid $color-primary;
+        
+        @include mq(small) {
+            h1 {
+                display: none;
+            }
+        }
+        
+        @include mq(medium) {
+            width: span(6);
+            padding: inherit;
+        }
+        
+        @include mq(large) {
+            width: span(4);
+            padding: inherit;
+        }
+        
+        h1, h2, p {
+            color: $white;
+        }
+        
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+    
+}
+
+.events {
+    @extend %clearfix;
+    position: relative;
+    width: 100%;
+    height: em(400px);
+    overflow: hidden;
+    background: get-img(root, "BallentineBellHill.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    div {
+        float: right;
+        min-height: em(400px);
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

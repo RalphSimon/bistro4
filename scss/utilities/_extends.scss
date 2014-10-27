@@ -1,0 +1,16 @@
+%clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+%pseudos {
+    display: block;
+    content: '';
+    position: absolute;
+}
+

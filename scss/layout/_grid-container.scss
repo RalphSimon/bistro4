@@ -1,0 +1,49 @@
+// ==========================================================================
+// Grid Container
+// ==========================================================================
+
+.grid {
+  @extend %clearfix;
+  @extend .centered;
+  width: 90%;
+ 
+  // Make nested grid 100%
+  [class*="grid__col--"] > & {
+    width: 100%; 
+  }
+
+  // Set a max-width for grid container
+  @include mq(large) {
+    max-width: $g-cont-max-w;
+  }
+}
+
+// TEMPORARY 
+
+.grid-container {
+	@extend .centered;
+    @extend %clearfix;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+	/* Columns
+	================================ */
+
+	.grid-container > [class^="small-"] {
+		float: left;
+		min-height: 12.5vw;
+	}
+	.grid-container > [class^="small-"]:first-child {
+		margin-left: 0;
+	}
+	.grid-container > [class^="small-"]:last-child {
+		float: left;
+	}
+    .grid-container .left {
+    float: left;
+    }
+    .grid-container .right {
+        float: right;
+    }
