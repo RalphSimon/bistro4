@@ -1,23 +1,21 @@
-@media (min-width: 1px) and (max-width: 768px) {
-  .is-displayed-mobile {
-    display: block; 
-  }
+@include mq(small) {
+    .is-displayed-mobile {
+        display: block; 
+    }
     .is-hidden-mobile {
       display: none; 
+    }
+
+    .is-collapsed-mobile {
+        visibility: collapse;
+        padding: 0;
+        height: 0;
+        margin: 0;
+        line-height: 0; 
     } 
 }
-@media (min-width: 769px) {
+@include mq(medium) {
   .is-displayed-mobile {
     display: none; 
   } 
-}
-
-@media (min-width: 1px) and (max-width: 768px) {
-    .is-collapsed-mobile {
-    visibility: collapse;
-    padding: 0;
-    height: 0;
-    margin: 0;
-    line-height: 0; 
-    } 
 }

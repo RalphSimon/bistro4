@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Bistro 4{% endblock %}</title>
         {{ "style.css" | asset_url | stylesheet_tag }}
+        {{ "modernizr.custom.js" | asset_url | script_tag }}
         <!-- TODO: Style this project :) -->
     </head>
     <body>

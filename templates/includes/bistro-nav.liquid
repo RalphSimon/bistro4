@@ -1,9 +1,9 @@
 <div class="overlay overlay-slidedown">
-    <button type="button" class="overlay-close">Close</button> 
-    <nav>
+    <button type="button" class="overlay-close is-displayed-mobile">Close</button> 
+    <nav class="navbar">
 
         <!-- TODO: let navigation slide in from the top -->
-        <ul>
+        <ul class="nav">
             <li class="nav__item"><a href="#">Dagmenu</a></li>
     <!--        <li class="nav__item"><a href="#">Suggesties</a></li>-->
             <li class="nav__item"><a href="#">A la carte</a></li>
@@ -12,8 +12,7 @@
         </ul>
     </nav>
 
-    <section class="opn-hrs">
-        <h1>Openingsuren &amp; Contact</h1>
+    <section class="opn-hrs is-displayed-mobile">
         {% include "openinghours" %}
     </section>
 </div>
