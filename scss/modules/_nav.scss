@@ -48,10 +48,10 @@
         & nav {
             text-align: center;
             position: relative;
-            top: 20%;
+            top: 30%;
             height: 60%;
-            -webkit-transform: translateY(-20%);
-            transform: translateY(-20%);
+            -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
         }
 
         & ul {
@@ -146,9 +146,9 @@
         a {
             @extend %nav-item-link;
             color: $true-white;
-            &:hover {
-                @extend %nav-item-on;
-            }
+//            &:hover {
+//                @extend %nav-item-on;
+//            }
         }
 
         @include m(current) {

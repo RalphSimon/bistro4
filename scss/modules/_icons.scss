@@ -33,23 +33,219 @@
 }
 
 // Filter Icon
+$duration: .5s;
+
+$size : 100%;
+$toggled-size : .75;
+$bg : #449A88;
+$nav-bg  : #2A2A2A;
+$content-bg : #E7E6DD;
 
 .icn {
+    display: inline-block;
+    position: relative;
+    padding: 1rem;
+    transition: $duration/2;
+    cursor: pointer;
+    user-select: none;
+    opacity: .8;
+    z-index: 200;
+
+    .icn--toggle:before, .icn--toggle:after {
+        transition: $duration/2;
+    }
+
+    &:hover {
+        transition: $duration;
+        opacity: 1;
+
+    .icn--toggle:before, .icn--toggle:after {
+        transition: $duration/2;
+    }
+
+    .icn--toggle:before { top: em(10px); }
+    .icn--toggle:after { top: em(-10px); }
+    }
 
     @include m(toggle) {
         line-height: 0;
         cursor: pointer;
-        width: 30px;
-        height: 21px;
-        border-top: solid 3px palette(grey, light);
-        border-bottom: solid 3px palette(grey, light);
+        width: em(30px);
+        height: em(3px);
         position: relative;
+        background: $white;
         margin: auto;
-        
-        @include p-el(before, 30px, 3px) {
-            background: palette(grey, light);
+        transition: $duration;
+            
+        &:before, &:after {
+            @extend %pseudos;
+            width: em(30px);
+            height: em(3px);
             top: 6px;
-        }
-    }
+            background: $white;
+            transition: $duration $duration/2;
     
+        }
+        
+        &:before { top: em(8px); }
+        &:after { top: em(-8px); }
+    }
 }
+
+.open:not(.steps) .icn--toggle:before,
+.open:not(.steps) .icn--toggle:after {
+  top: 0 !important;
+}
+
+.open .icn--toggle:before,
+.open .icn--toggle:after {
+  transition: $duration;
+}
+
+.open.x {
+  .icn--toggle {
+    background: transparent;
+
+    &:before { 
+        -webkit-transform: rotate(-45deg); 
+        transform: rotate(-45deg);
+    }
+    &:after { 
+        -webkit-transform: rotate(45deg); 
+        transform: rotate(45deg);
+    }
+  }
+}
+
+// check out: http://codepen.io/bennettfeely/pen/twbyA
+// Change to watch in slow motion
+
+
+//.navicon-button {
+//  display: inline-block;
+//  position: relative;
+//  padding: 2.0625rem 1.5rem;
+//  transition: $duration/2;
+//  cursor: pointer;
+//  user-select: none;
+//  opacity: .8;
+//
+//  .navicon:before, .navicon:after {
+//    transition: $duration/2;
+//  }
+//
+//  &:hover {
+//    transition: $duration;
+//    opacity: 1;
+//
+//    .navicon:before, .navicon:after {
+//      transition: $duration/2;
+//    }
+//
+//    .navicon:before { top: .825rem; }
+//    .navicon:after { top: -.825rem; }
+//  }
+//}
+//
+//.navicon {
+//  position: relative;
+//  width: 2.5em;
+//  height: .3125rem;
+//  background: $bg;
+//  transition: $duration;
+// /* border-radius: 2.5rem;*/
+//
+//  &:before, &:after {
+//    display: block;
+//    content: "";
+//    height: .3125rem;
+//    width: 2.5rem;
+//    background: $content-bg;
+//    position: absolute;
+//    z-index: -1;
+//    transition: $duration $duration/2;
+//    /*border-radius: 1rem;*/
+//  }
+//
+//  &:before { top: .625rem; }
+//  &:after { top: -.625rem; }
+//}
+//
+//.open:not(.steps) .navicon:before,
+//.open:not(.steps) .navicon:after {
+//  top: 0 !important;
+//}
+//
+//.open .navicon:before,
+//.open .navicon:after {
+//  transition: $duration;
+//}
+//
+///* × and + */
+//.open.plus,
+//.open.x {
+//  .navicon {
+//    background: transparent;
+//
+//    &:before { -webkit-transform: rotate(-45deg); }
+//    &:after { -webkit-transform: rotate(45deg); }
+//  }
+//}
+//.open.plus { 
+//  transform: scale($toggled-size) rotate(45deg) 
+//}
+
+
+///* Minus */
+//.open { transform: scale($toggled-size); }
+//
+///* Arrows */
+//.open.larr .navicon,
+//.open.rarr .navicon,
+//.open.uarr .navicon {
+//    &:before, &:after {
+//      width: 1.5rem;
+//    }
+//
+//    &:before { transform: rotate(35deg); transform-origin: left top; }
+//    &:after { transform: rotate(-35deg); transform-origin: left bottom; }
+//}
+//.open.uarr { transform: scale($toggled-size) rotate(90deg); }
+//
+///* Arrows */
+//.open.rarr .navicon {
+//    &:before { transform: translate3d(1em,0,0) rotate(-35deg); transform-origin: right top; }
+//    &:after { transform: translate3d(1em,0,0) rotate(35deg); transform-origin: right bottom; }
+//}
+
+
+///* Base ================== */
+//* { box-sizing: border-box; }
+//
+//html { font-size: $size; }
+//html, body, section { position: relative; height: 100%; }
+//
+//body {
+//  background: $bg;
+//  padding: 1.5rem 1.5rem 0;
+//  backface-visibility: hidden;
+//}
+//
+section {
+//  display: flex;
+//  max-width: 40rem;
+//  margin: 0 auto;
+//  flex-direction: column;
+//  justify-content: space-between;
+//  border-radius: .5rem .5rem 0 0;
+//  background: $content-bg;
+//  overflow: hidden;
+
+  /* Smoother animations */
+  & *,
+  & *:before,
+  & *:after {
+   transform: translate3d(0,0,0);
+  }
+}
+

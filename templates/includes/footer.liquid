@@ -28,6 +28,8 @@
 -->
         <script src="js/classie.js"></script>
 		<script src="js/demo1.js"></script>
+        {{ "foundation.js" | asset_url | script_tag }}
+        {{ "foundation.tab.js" | asset_url | script_tag }}
 <!--
         <script>
           $('.icn--toggle').click(function() {
@@ -35,3 +37,9 @@
           });
         </script>
 -->
+        <script>
+            $("a").click(function(){
+            $(this).toggleClass("open");
+            });
+        </script>
+

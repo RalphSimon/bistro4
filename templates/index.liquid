@@ -7,11 +7,13 @@
                 <h2>eetcafé</h2>
             </a>
 
-            <!-- MAIN NAV --> 
-            <span id="trigger-overlay" class="icn--toggle is-displayed-mobile ">
-                    <b class="srt">filter</b>
-            </span>
-    
+            <!-- MAIN NAV  --> 
+            <a  id="trigger-overlay" class="icn x is-displayed-mobile ">
+                    <div class="icn--toggle"></div>
+            </a>
+            <a class="navicon-button x">
+              <div class="navicon"></div>
+            </a>
             {% include "bistro-nav" %}
 
             
@@ -21,7 +23,10 @@
             
         </header>
 
-        <section itemprop="menu" class="la-carte">
+        
+        {% include "tabs" %}
+        <section itemprop="menu" class="la-carte tabs-content">
+            
             <!-- BREAKFAST -->
             {% include "breakfast" %}
             
